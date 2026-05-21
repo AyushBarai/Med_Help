@@ -1,0 +1,42 @@
+version: '3.8'
+
+# This spins up Postgres and Redis locally so you don't need to install them.
+# Run with: docker compose up -d
+# Stop with: docker compose down
+
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: pathlab_postgres
+    environment:
+      POSTGRES_DB: pathlab_db
+      POSTGRES_USER: pathlab_user
+      POSTGRES_PASSWORD: pathlab_pass
+    ports:
+      - "5432:5432"         # host:container
+    volumes:
+      - pathlab_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pathlab_user -d pathlab_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: pathlab_redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes   # persist data to disk
+    volumes:
+      - pathlab_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pathlab_postgres_data:
+  pathlab_redis_data:
