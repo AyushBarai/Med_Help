@@ -1,3 +1,5 @@
 spring:
   application:
     name: medhelp
+  server:
+    port: 8081
