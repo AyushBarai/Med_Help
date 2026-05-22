@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan
  * @EnableScheduling      = activates @Scheduled methods (TAT alerts, subscription checks)
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.medhelp")
 @EnableScheduling
 public class MedhelpApplication {
 
