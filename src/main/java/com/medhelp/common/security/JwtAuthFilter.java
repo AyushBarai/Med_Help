@@ -1,6 +1,6 @@
 package com.medhelp.common.security;
 import com.medhelp.common.tenant.TenantContext;
-import com.medhelp.medhelp.JwtTokenProvider;
+
 import org.springframework.lang.NonNull;
 
 import io.jsonwebtoken.Claims;

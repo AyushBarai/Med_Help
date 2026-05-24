@@ -1,4 +1,4 @@
-package com.medhelp.medhelp;
+package com.medhelp.common.medhelp;
 
 import com.medhelp.common.security.JwtAuthFilter;
 

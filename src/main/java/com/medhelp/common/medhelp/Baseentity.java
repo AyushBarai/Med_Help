@@ -1,4 +1,4 @@
-package com.medhelp.medhelp;
+package com.medhelp.common.medhelp;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -27,10 +27,10 @@ public abstract class Baseentity {
     private UUID id;
 
     @CreatedDate
-    @Column(nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdDate;
 
     @LastModifiedDate
-    @Column(nullable = false)
+    @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 }

@@ -1,4 +1,4 @@
-package com.medhelp.medhelp;
+package com.medhelp.common.security;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
