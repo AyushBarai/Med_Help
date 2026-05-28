@@ -29,3 +29,5 @@ docker compose up -d
 
 # Tech Stack 
 ![alt text](image-4.png)
+
+DAY 7
